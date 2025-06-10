@@ -1,0 +1,21 @@
+{
+  "orderId": 1001,
+  "clientId":1,
+  "items": [
+    {
+      "productId": "pen",
+      "quantity": 100,
+      "unitPrice": 1.10
+    },
+    {
+      "productId": "book",
+      "quantity": 5,
+      "unitPrice": 5.00
+    },
+    {
+      "productId": "eraser",
+      "quantity": 10,
+      "unitPrice": 1.00
+    }
+  ]
+}

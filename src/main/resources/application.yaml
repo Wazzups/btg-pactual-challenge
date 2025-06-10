@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      username: admin
+      password: admin
+      database: btgpactualdb
+      authentication-database: admin
+      host: localhost
+      port: 27017
+      auto-index-creation: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+
+btg:
+  rabbitmq:
+    order-queue: btg.pactual.orders.queue

@@ -1,0 +1,33 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo-btgpactual
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=btgpactualdb
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-btgpactual
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASSWORD: guest
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-btgpactual
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+      - rabbitmq
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
