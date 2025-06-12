@@ -15,7 +15,12 @@ spring:
     host: localhost
     port: 5672
 
-
 btg:
   rabbitmq:
     order-queue: btg.pactual.orders.queue
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
